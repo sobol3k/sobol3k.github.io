@@ -1,0 +1,54 @@
+/* okienko typu popup informujące o błędzie formularza */
+
+.message-error{
+    display: none;
+    position: fixed;
+    z-index: 999999;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%,-15%);
+    width: 400px;
+    height: 200px;
+    padding: 5px;
+    background: linear-gradient(45deg, black, gray, white);
+    border: 3px solid black;
+    border-radius: 5px;
+
+    .header-error{
+        position: relative;
+        text-transform: uppercase;
+        text-align: center;
+
+        &::after{
+            content: '';
+            position: absolute;
+            margin-top: 2.5px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: block;
+            width: 100px;
+            height: 5px;
+            background: crimson;
+        }
+    }
+
+    .text-error{
+        color: white;
+        text-align: justify;
+    }
+
+    .row-error{
+        margin-top: 7px;
+        text-align: center;
+
+        .accepted-error{
+            width: 100px;
+            height: 30px;
+            background: white;
+            border: 2px solid black;
+            font-weight: 600;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+    }
+}

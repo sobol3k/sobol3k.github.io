@@ -12,7 +12,6 @@
   background: linear-gradient(45deg, black, gray, white);
   border: 3px solid black;
   border-radius: 5px;
-  font-family: 'Lato', sans-serif;
 }
 .message-error .header-error {
   position: relative;
@@ -86,7 +85,6 @@
 .section .article .container-games .row-with-game .describe {
   color: white;
   font-size: 17.5px;
-  font-family: 'Lato', sans-serif;
   width: 395px;
   height: 95%;
   border: 3px solid white;
@@ -110,6 +108,9 @@
   bottom: 0;
   background: rgba(0, 0, 0, 0.85);
   z-index: 998;
+}
+html {
+  font-family: 'Lato', sans-serif;
 }
 body {
   margin: 0;
@@ -140,7 +141,6 @@ body {
   color: white;
   top: 70%;
   transform: translateY(-70%);
-  font-family: 'Lato', sans-serif;
   text-transform: uppercase;
   text-shadow: 3px 3px 10px black;
   letter-spacing: 3px;
@@ -185,7 +185,6 @@ body {
   text-decoration: none;
   color: white;
   font-size: 20px;
-  font-family: 'Lato', sans-serif;
 }
 .nav ul li a::after {
   content: '';
@@ -238,7 +237,6 @@ body {
   width: 175px;
   text-decoration: none;
   font-size: 20px;
-  font-family: 'Lato', sans-serif;
   color: black;
   text-transform: lowercase;
   line-height: 50px;
@@ -276,7 +274,6 @@ body {
   border-radius: 15px;
 }
 .section .article .header-about-website {
-  font-family: 'Lato', sans-serif;
   border-bottom: 3px solid black;
   text-align: center;
   padding-bottom: 13px;
@@ -306,7 +303,6 @@ body {
   border-radius: 5px;
 }
 .section .article .container-video-gameplay .gameplay-header {
-  font-family: 'Lato', sans-serif;
   font-size: 35px;
   text-align: center;
 }
@@ -331,7 +327,6 @@ body {
   margin: 15px;
 }
 .section .article .form .contact-header {
-  font-family: 'Lato', sans-serif;
   color: deepskyblue;
 }
 .section .article .form .row {
@@ -340,7 +335,6 @@ body {
 }
 .section .article .form .row label {
   font-size: 20px;
-  font-family: 'Lato', sans-serif;
   font-weight: 700;
 }
 .section .article .form .counter {
@@ -350,7 +344,6 @@ body {
 .section .article .form .counter .counter-of-chars {
   font-size: 20px;
   font-weight: 700;
-  font-family: 'Lato', sans-serif;
 }
 .section .article .form input[type="text"],
 .section .article .form input[type="email"] {
@@ -382,7 +375,6 @@ body {
   padding: 10px;
   box-sizing: border-box;
   font-size: 18px;
-  font-family: 'Lato', sans-serif;
   border-radius: 5px;
 }
 .section .article .form button[type="submit"] {
@@ -421,7 +413,6 @@ body {
 }
 .footer .content-footer {
   align-self: center;
-  font-family: 'Lato', sans-serif;
   font-size: 20px;
   font-weight: 900;
 }
@@ -437,10 +428,16 @@ body {
   body {
     padding: 10px;
   }
+  .section .article .txt {
+    font-size: 18px;
+  }
 }
 @media all and (max-width: 900px) {
   .header .logo {
     margin-left: 50px;
+  }
+  .section .article .txt {
+    font-size: 17px;
   }
   .section .article .container-games {
     box-sizing: border-box;
@@ -455,7 +452,7 @@ body {
     margin-left: -5px;
   }
   .section .article .txt {
-    font-size: 17px;
+    font-size: 16px;
   }
   .section .article .container-games .row-with-game .describe {
     font-size: 15.5px;
@@ -587,7 +584,7 @@ body {
     line-height: 40px;
   }
   .section .article .txt {
-    font-size: 15px;
+    font-size: 14px;
   }
   .section .article .form .row button[type="submit"] {
     width: 100px;
@@ -597,18 +594,26 @@ body {
     width: 100px;
     height: 50px;
   }
+  .section .article .form .message-error {
+    width: 300px;
+    height: 150px;
+    font-size: 12px;
+  }
   .section .article .container-games .row-with-game .describe {
     font-size: 11.7px;
   }
 }
 @media all and (max-width: 360px) {
+  .section .article .txt {
+    font-size: 13px;
+  }
   .section .article .container-games .row-with-game .describe {
     font-size: 11.3px;
   }
 }
 @media all and (max-width: 330px) {
   .section .article .txt {
-    font-size: 14px;
+    font-size: 12.5px;
   }
   .section .article .container-games .row-with-game .describe {
     font-size: 10px;

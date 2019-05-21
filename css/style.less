@@ -1,6 +1,6 @@
 @import 'mixins.less';
-@import 'popup.less';
-@import 'css_for_container_games.less';
+@import 'messageError.less';
+@import 'containerGames.less';
 
 .opened-message-error::after{
     content: '';
@@ -12,6 +12,10 @@
     bottom: 0;
     background: rgba(0, 0, 0, 0.85);
     z-index: 998;
+}
+
+html{
+    font-family: 'Lato', sans-serif;
 }
 
 body{
@@ -47,7 +51,6 @@ body{
         color: white;
         top: 70%;
         transform: translateY(-70%);
-        font-family: 'Lato', sans-serif;
         text-transform: uppercase;
         text-shadow: 3px 3px 10px black;
         letter-spacing: 3px;
@@ -96,7 +99,6 @@ body{
                 text-decoration: none;
                 color: white;
                 font-size: 20px;
-                font-family: 'Lato', sans-serif;
 
                 &::after{
                     content: '';
@@ -158,7 +160,6 @@ body{
                 width: 175px;
                 text-decoration: none;
                 font-size: 20px;
-                font-family: 'Lato', sans-serif;
                 color: black;
                 text-transform: lowercase;
                 line-height: 50px;
@@ -201,7 +202,6 @@ body{
         .border-radius(15px);
 
         .header-about-website{
-            font-family: 'Lato', sans-serif;
             border-bottom: 3px solid black;
             text-align: center;
             padding-bottom: 13px;
@@ -236,7 +236,6 @@ body{
             }
 
             .gameplay-header{
-                font-family: 'Lato', sans-serif;
                 font-size: 35px;
                 text-align: center;
 
@@ -266,7 +265,6 @@ body{
             margin: 15px;
 
             .contact-header{
-                font-family: 'Lato', sans-serif;
                 color: deepskyblue;
             }
 
@@ -276,7 +274,6 @@ body{
 
                 label{
                     font-size: 20px;
-                    font-family: 'Lato', sans-serif;
                     font-weight: 700;
                 }
             }
@@ -288,7 +285,6 @@ body{
                 .counter-of-chars{
                     font-size: 20px;
                     font-weight: 700;
-                    font-family: 'Lato', sans-serif;
                 }
             }
 
@@ -325,7 +321,6 @@ body{
                 padding: 10px;
                 box-sizing: border-box;
                 font-size: 18px;
-                font-family: 'Lato', sans-serif;
                 .border-radius(5px);
             }
 
@@ -357,7 +352,6 @@ body{
                     background: #990000;
                 }
             }
-
         }
     }
 }
@@ -373,7 +367,6 @@ body{
 
     .content-footer{
         align-self: center;
-        font-family: 'Lato', sans-serif;
         font-size: 20px;
         font-weight: 900;
     }
@@ -396,6 +389,16 @@ body{
     body{
         padding: 10px;
     }
+
+    .section{
+
+        .article{
+
+            .txt{
+                font-size: 18px;
+            }
+        }
+    }
 }
 
 @media all and (max-width: 900px){
@@ -410,6 +413,10 @@ body{
     .section{
 
         .article{
+
+            .txt{
+                font-size: 17px;
+            }
 
             .container-games{
                 box-sizing: border-box;
@@ -447,7 +454,7 @@ body{
         .article{
 
             .txt{
-                font-size: 17px;
+                font-size: 16px;
             }
 
             .container-games{
@@ -743,7 +750,7 @@ body{
         .article{
 
             .txt{
-                font-size: 15px;
+                font-size: 14px;
             }
 
             .form{
@@ -759,6 +766,12 @@ body{
                         width: 100px;
                         height: 50px;
                     }
+                }
+
+                .message-error{
+                    width: 300px;
+                    height: 150px;
+                    font-size: 12px;
                 }
             }
     
@@ -781,6 +794,10 @@ body{
 
         .article{
 
+            .txt{
+                font-size: 13px;
+            }
+
             .container-games{
 
                 .row-with-game{
@@ -801,7 +818,7 @@ body{
         .article{
 
             .txt{
-                font-size: 14px;
+                font-size: 12.5px;
             }
 
             .container-games{

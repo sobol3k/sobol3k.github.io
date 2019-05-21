@@ -1,3 +1,22 @@
+
+function removePadding(){
+
+    if(document.location.href.indexOf('kontakt.html') > -1){
+
+        const article = document.querySelector('.article');
+        return article.style.padding = 0;
+    }
+}
+
+function addMarginToFooter(){
+
+    if(document.location.href.indexOf('index.html') > -1 && window.outerWidth <= 750){
+
+        const footer = document.querySelector('.footer');
+        return footer.style.marginTop = 95 + 'px';
+    }
+}
+
 function forMobile(btn){
 
     /* RWD dla uzytkonwika jeśli wejdzie na strone po przez urządzenie które ma mniejszą rozdzielczość niż 450px */
@@ -71,18 +90,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if(window.innerWidth <= 750 && document.location.href.indexOf('type') > -1){
     
-                const footer = document.querySelector('.footer');
-                footer.style.marginTop = "95" + "px";
+            const footer = document.querySelector('.footer');
+            footer.style.marginTop = "95" + "px";
         }
 
     }, false)
 
-    /* usunięcie paddingu dla elementu article kiedy użytkownik jest na zakładce kontakt */
-
-    if(document.location.href.indexOf('kontakt.html') > -1){
-
-        const article = document.querySelector('.article');
-        article.style.padding = 0;
-    }
+    removePadding();
+    addMarginToFooter();
 
 }, false)
