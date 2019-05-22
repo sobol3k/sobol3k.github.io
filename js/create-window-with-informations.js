@@ -14,19 +14,30 @@ function createInfoWindow(manufacturer, publisher, yearOfProduction){
     windowInfo.style.fontSize = (window.outerWidth <= 430) ? 12 + 'px' : 15 + 'px';
     windowInfo.style.zIndex = '1';
     windowInfo.style.backgroundColor = 'white';
-    windowInfo.innerHTML = `<h1 style="text-align: center; font-family: 'Lato', sans-serif;">informacje</h1>
-                            <span style="position: absolute; top: 5%; right: 5%; font-family: 'Lato', sans-serif;">ESC (wyjście)</span>
+    windowInfo.innerHTML = `<h1 style="text-align: center;">informacje</h1>
+                            <span style="position: absolute; top: 5%; left: 2%;">ESC (wyjście)</span>
+                            <span class="close-window"></span>
                             <div class="info-box">
                                 <div style="margin-bottom: 25px;">
-                                    <strong style="font-family: 'Lato', sans-serif;">Producent: ${manufacturer} </strong>
+                                    <strong>Producent: ${manufacturer} </strong>
                                 </div>
                                 <div style="margin-bottom: 25px;">
-                                    <strong style="font-family: 'Lato', sans-serif;">Wydawca: ${publisher} </strong>
+                                    <strong>Wydawca: ${publisher} </strong>
                                 </div>
                                 <div>
-                                    <strong style="font-family: 'Lato', sans-serif;">Rok produkcji: ${yearOfProduction} </strong>
+                                    <strong>Rok produkcji: ${yearOfProduction} </strong>
                                 </div>
                             </div>`;
+
+    document.addEventListener('click', (e) => {
+
+        if(e.target.classList.contains('close-window')){
+
+            document.body.removeChild(windowInfo);
+        }
+
+    }, false)
+
 
     document.addEventListener('keyup', (e) => {
 
@@ -36,6 +47,8 @@ function createInfoWindow(manufacturer, publisher, yearOfProduction){
         }
 
     }, false)
+
+    
 
     document.body.appendChild(windowInfo);
 }

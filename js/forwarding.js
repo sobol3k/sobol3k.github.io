@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         document.location = 'https://www.gry-online.pl';
                     }
 
-                }, 3000);
+                }, 1000);
 
             }
 
