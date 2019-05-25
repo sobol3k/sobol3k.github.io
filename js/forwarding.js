@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.classList.add('opened-message-error');
 
                 const newElement = document.createElement('span');
-                newElement.innerText = 'Za chwilę nastąpi przekierowanie na żądaną strone';
+                newElement.innerText = 'za chwilę nastąpi przekierowanie na żądaną strone';
                 newElement.style.color = 'white';
-                newElement.style.fontSize = '40' + 'px';
+                newElement.style.fontSize = (window.outerWidth <= 1000) ? 15 + 'px' : 20 + 'px';
                 newElement.style.fontFamily = 'sans-serif';
                 newElement.style.zIndex = '9999';
                 newElement.style.display = 'block';
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         document.location = 'https://www.gry-online.pl';
                     }
 
-                }, 1000);
+                }, 750);
 
             }
 

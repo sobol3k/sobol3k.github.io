@@ -1,30 +1,32 @@
 /* funkcje sprawdzające pola podczas zdarzenia typu submit */
 
-function checkMail(mail){
-
-    const mailValue = mail.value;
-
-    if(mailValue.length < 10 || mailValue.lastIndexOf('@') === -1 || mailValue.lastIndexOf('.') === -1){
-
-        return false;
-    }
-    else{
-
-        return true;
-    }
-}
-
 function checkName(name){
 
     const nameValue = name.value;
+    const nameReg = new RegExp("^[a-zA-Z]{3,}$");
 
-    if(nameValue.length < 3){
+    if(nameReg.test(nameValue)){
 
-        return false;
+        return true;
     }
     else{
 
-         return true;
+        return false;
+    }
+}
+
+function checkMail(email){
+
+    const mailValue = email.value;
+    const mailReg = new RegExp("^[0-9a-zA-Z_.-]+@[0-9a-zA-Z.-]+\.[a-zA-Z]{2,3}$");
+
+    if(mailReg.test(mailValue)){
+
+        return true;
+    }
+    else{
+
+        return false;
     }
 }
 
@@ -32,15 +34,14 @@ function checkSubject(subject){
 
     const subjectValue = subject.value;
 
-    if(subjectValue.length < 10){
-
-        return false;
-    }
-    else{
+    if(subjectValue.length < 5){
 
         return true;
     }
+    else{
 
+        return false;
+    }
 }
 
 function checkMessage(message){
@@ -49,11 +50,11 @@ function checkMessage(message){
 
     if(messageValue.length < 10){
 
-        return false;
+        return true;
     }
     else{
 
-        return true;
+        return false;
     }
 }
 
@@ -86,13 +87,15 @@ document.addEventListener('DOMContentLoaded', function(){
         message: document.querySelector('textarea[name="message"]')
     }
 
+    /* destrukturyzacja */
+
     const {name, email, subject, message} = form;
 
     /* walidacja pól formularza na żywo */
 
     name.addEventListener('input', function(){
 
-        if(name.value.length < 3){
+        if(!checkName(name)){
 
             name.classList.add('bad');
         }
@@ -105,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     email.addEventListener('input', function(){
 
-        if(email.value.length < 10 || email.value.lastIndexOf('@') === -1 || email.value.lastIndexOf('.') === -1){
+        if(!checkMail(email)){
 
             email.classList.add('bad');
         }
@@ -118,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     subject.addEventListener('input', function(){
 
-        if(subject.value.length < 10){
+        if(checkSubject(subject)){
 
             subject.classList.add('bad');
         }
@@ -131,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     message.addEventListener('input', function(){
 
-        if(message.value.length < 10){
+        if(checkMessage(message)){
 
             message.classList.add('bad');
         }
@@ -146,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     const contactForm = document.querySelector('form').addEventListener('submit', function(e){
 
-        if(!checkName(name) || !checkMail(email) || !checkSubject(subject) || !checkMessage){
+        if(!checkName(name) || !checkMail(email) || checkSubject(subject) || checkMessage(message)){
 
             e.preventDefault();
 

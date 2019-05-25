@@ -20,7 +20,7 @@ html{
 
 body{
     margin: 0;
-    background: url(../img/background.jpg);
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
     background-attachment: fixed;
     height: 100vh;
 }
@@ -97,7 +97,7 @@ body{
                 display: block;
                 padding: 2px;
                 text-decoration: none;
-                color: white;
+                color: black;
                 font-size: 20px;
 
                 &::after{
@@ -106,9 +106,8 @@ body{
                     margin-top: 5px;
                     width: 0;
                     height: 3px;
-                    border-radius: 22.5%;
                     background: deepskyblue;
-                    transition: width 1s;
+                    transition: width 300ms;
                 }
 
                 &:hover::after{
@@ -181,7 +180,7 @@ body{
                     background: deepskyblue;
                     border-radius: 7px;
                     z-index: -1;
-                    transition: width, height 1s, 1s;
+                    transition: width, height 300ms, 300ms;
                 }
 
                 &:hover::after{
@@ -274,6 +273,7 @@ body{
                 label{
                     font-size: 20px;
                     font-weight: 700;
+                    color: black;
                 }
             }
 
@@ -751,19 +751,33 @@ body{
     .section{
 
         .left-menu{
+            height: 50px;
 
             .menu{
 
                 li{
 
-                    a{
+                    a{  
+                        position: relative;
                         width: 40px;
                         height: 40px;
                         font-size: 15px;
                         transform: skewX(0deg);
-                        border: 1px solid black;
+                        border: none;
+                        background: none;
                         text-transform: uppercase;
                         line-height: 40px;
+                        cursor: pointer;
+
+                        &::after{
+                            content: '';
+                            position: absolute;
+                            top: 85%;
+                            display: block;
+                            width: 100%;
+                            height: 3px;
+                            background: white;
+                        }
                     }
                 }
             }

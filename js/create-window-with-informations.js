@@ -48,7 +48,5 @@ function createInfoWindow(manufacturer, publisher, yearOfProduction){
 
     }, false)
 
-    
-
     document.body.appendChild(windowInfo);
 }
