@@ -23,6 +23,8 @@ function addMarginToFooter(){
 
 function forMobile(btn){
 
+    const footer = document.querySelector('.footer');
+
     /* RWD dla uzytkonwika jeśli wejdzie na strone po przez urządzenie które ma mniejszą rozdzielczość niż 450px */
 
     if(window.outerWidth <= 450){
@@ -42,12 +44,25 @@ function forMobile(btn){
         btn[4].textContent = "ekonomiczne";
     }
 
-    /* dodanie marginesu górnego dla stopki kiedy rozdzielczość jest < 750px oraz użytkownik jest na podstronie 'type/gatunek-gier' */
+    /* dodanie marginesu górnego dla stopki kiedy rozdzielczość jest <= 750px oraz użytkownik jest na podstronie 'type/gatunek-gier' */
 
     if(window.innerWidth <= 750 && document.location.href.indexOf('type') > -1){
 
-            const footer = document.querySelector('.footer');
-            footer.style.marginTop = 95 + "px";
+        footer.style.marginTop = 95 + "px";
+    }
+
+    /* dodanie marginesu górnego dla stopki kiedy rozdzielczość jest <= 450px oraz użytkownik jest na podstronie 'type/gatunek-gier' */
+
+    if(window.innerWidth <= 450 && document.location.href.indexOf('type') > -1){
+
+        footer.style.marginTop = 70 + "px";
+    }
+
+    /* dodanie marginesu górnego dla stopki kiedy rozdzielczość jest <= 450px oraz użytkownik jest na stronie głównej */
+
+    if(window.innerWidth <= 450 && document.location.href.indexOf('index.html') > -1){
+
+        footer.style.marginTop = 10 + "px";
     }
 }
 
