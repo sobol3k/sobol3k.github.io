@@ -15,6 +15,10 @@ function addMarginToFooter(){
         const footer = document.querySelector('.footer');
         return footer.style.marginTop = 95 + 'px';
     }
+
+    if(document.location.href.indexOf('index.html') > -1 && window.outerWidth <= 450){
+        return footer.style.marginTop = 70 + 'px';
+    }
 }
 
 function forMobile(btn){
@@ -43,7 +47,7 @@ function forMobile(btn){
     if(window.innerWidth <= 750 && document.location.href.indexOf('type') > -1){
 
             const footer = document.querySelector('.footer');
-            footer.style.marginTop = "95" + "px";
+            footer.style.marginTop = 95 + "px";
     }
 }
 
@@ -69,6 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('resize', () => {
 
+        const footer = document.querySelector('.footer');
+
         /* RWD dla uzytkonwika komputerowego, który być może będzie zmniejszał/zwiększał rozmiar okna*/
 
         if(window.outerWidth <= 450){
@@ -88,10 +94,38 @@ document.addEventListener('DOMContentLoaded', () => {
             btn[4].textContent = "ekonomiczne";
         }
 
+        /* dla zakładki type */
+
         if(window.innerWidth <= 750 && document.location.href.indexOf('type') > -1){
     
-            const footer = document.querySelector('.footer');
-            footer.style.marginTop = "95" + "px";
+            footer.style.marginTop = 95 + "px";
+        }
+
+        if(window.innerWidth >= 750 && document.location.href.indexOf('type') > -1){
+    
+            footer.style.marginTop = 10 + "px";
+        }
+
+        if(window.innerWidth <= 450 && document.location.href.indexOf('type') > -1){
+
+            footer.style.marginTop = 70 + 'px';
+        }
+
+        /* dla zakładki index.html */
+
+        if(window.innerWidth <= 750 && document.location.href.indexOf('index.html') > -1){
+
+            footer.style.marginTop = 95 + 'px';
+        }
+
+        if(window.innerWidth >= 750 && document.location.href.indexOf('index.html') > -1){
+
+            footer.style.marginTop = 10 + 'px';
+        }
+
+        if(window.innerWidth <= 450 && document.location.href.indexOf('index.html') > -1){
+
+            footer.style.marginTop = 70 + 'px';
         }
 
     }, false)

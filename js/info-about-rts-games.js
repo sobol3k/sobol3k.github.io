@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const infoIcons = document.querySelectorAll('.fa-info');
