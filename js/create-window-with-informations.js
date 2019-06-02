@@ -7,7 +7,7 @@ function createInfoWindow(manufacturer, publisher, yearOfProduction){
     windowInfo.style.left = 50 + '%';
     windowInfo.style.padding = 10 + 'px';
     windowInfo.style.transform = 'translate(-50%,-5%)';
-    windowInfo.style.width = (window.outerWidth <= 430) ? 300 + 'px' : 400 + 'px';
+    windowInfo.style.width = (window.outerWidth <= 430) ? 290 + 'px' : 400 + 'px';
     windowInfo.style.height = (window.outerWidth <= 430) ? 150 + 'px' : 200 + 'px';
     windowInfo.style.border = '3px solid gray';
     windowInfo.style.borderRadius = 8 + 'px';

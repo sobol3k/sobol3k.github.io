@@ -1,14 +1,39 @@
-
 function removePadding(){
-
     if(document.location.href.indexOf('kontakt.html') > -1){
         const article = document.querySelector('.article');
         return article.style.padding = 0;
     }
 }
 
-function addMarginToFooter(){
+function addMarginWhenUserIsLocatedTypeGames(footer){
+    if(window.innerWidth <= 750 && document.location.href.indexOf('type') > -1){
+        footer.style.marginTop = 95 + "px";
+    }
 
+    if(window.innerWidth >= 750 && document.location.href.indexOf('type') > -1){
+        footer.style.marginTop = 10 + "px";
+    }
+
+    if(window.innerWidth <= 450 && document.location.href.indexOf('type') > -1){
+        footer.style.marginTop = 70 + 'px';
+    }
+}
+
+function addMarginWhenUserIsLocatedMainWebsite(footer){
+    if(window.innerWidth <= 750 && document.location.href.indexOf('index.html') > -1){
+        footer.style.marginTop = 95 + 'px';
+    }
+
+    if(window.innerWidth >= 750 && document.location.href.indexOf('index.html') > -1){
+        footer.style.marginTop = 10 + 'px';
+    }
+
+    if(window.innerWidth <= 450 && document.location.href.indexOf('index.html') > -1){
+        footer.style.marginTop = 70 + 'px';
+    }
+}
+
+function addMarginToFooter(){
     if(document.location.href.indexOf('index.html') > -1 && window.outerWidth <= 750){
         const footer = document.querySelector('.footer');
         return footer.style.marginTop = 95 + 'px';
@@ -23,7 +48,6 @@ function forMobileDevices(btn){
     const footer = document.querySelector('.footer');
 
     /* RWD dla uzytkonwika jeśli wejdzie na strone po przez urządzenie które ma mniejszą rozdzielczość niż 450px */
-
     if(window.outerWidth <= 450){
         btn[0].textContent = "RTS";
         btn[1].textContent = "TPP";
@@ -40,27 +64,23 @@ function forMobileDevices(btn){
     }
 
     /* dodanie marginesu górnego dla stopki kiedy rozdzielczość jest <= 750px oraz użytkownik jest na podstronie 'type/gatunek-gier' */
-
     if(window.innerWidth <= 750 && document.location.href.indexOf('type') > -1){
 
         footer.style.marginTop = 95 + "px";
     }
 
     /* dodanie marginesu górnego dla stopki kiedy rozdzielczość jest <= 450px oraz użytkownik jest na podstronie 'type/gatunek-gier' */
-
     if(window.innerWidth <= 450 && document.location.href.indexOf('type') > -1){
         footer.style.marginTop = 70 + "px";
     }
 
     /* dodanie marginesu górnego dla stopki kiedy rozdzielczość jest <= 450px oraz użytkownik jest na stronie głównej */
-
     if(window.innerWidth <= 450 && document.location.href.indexOf('index.html') > -1){
         footer.style.marginTop = 10 + "px";
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-
     const typeOfGame = document.querySelectorAll('.type-of-game');
 
     const games = {
@@ -75,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const btn = [rts, tpp, adv, fps, eco];
 
     /* RWD dla uzytkonwika jeśli wejdzie na strone po przez urządzenie które ma mniejszą rozdzielczość niż 450px */
-
     forMobileDevices(btn);
 
     window.addEventListener('resize', () => {
@@ -99,33 +118,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         /* dla zakładki type */
+        addMarginWhenUserIsLocatedTypeGames(footer);
 
-        if(window.innerWidth <= 750 && document.location.href.indexOf('type') > -1){
-            footer.style.marginTop = 95 + "px";
-        }
-
-        if(window.innerWidth >= 750 && document.location.href.indexOf('type') > -1){
-            footer.style.marginTop = 10 + "px";
-        }
-
-        if(window.innerWidth <= 450 && document.location.href.indexOf('type') > -1){
-            footer.style.marginTop = 70 + 'px';
-        }
-
-        /* dla zakładki index.html */
-
-        if(window.innerWidth <= 750 && document.location.href.indexOf('index.html') > -1){
-            footer.style.marginTop = 95 + 'px';
-        }
-
-        if(window.innerWidth >= 750 && document.location.href.indexOf('index.html') > -1){
-            footer.style.marginTop = 10 + 'px';
-        }
-
-        if(window.innerWidth <= 450 && document.location.href.indexOf('index.html') > -1){
-            footer.style.marginTop = 70 + 'px';
-        }
-
+        /* dla index.html */
+        addMarginWhenUserIsLocatedMainWebsite(footer);
     }, false)
 
     removePadding();
