@@ -20,7 +20,9 @@ html{
 
 body{
     margin: 0;
-    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    background: url('../img/background.jpg');
+    background-size: cover;
+    background-position: center;
     background-attachment: fixed;
     height: 100vh;
 }
@@ -35,23 +37,11 @@ body{
     width: 100%;
     position: relative;
 
-    .logo{
-        position: absolute;
-        left: 32.5%;
-        width: 200px;
-        transform: translateX(-32.5%);
-
-        img{
-            width: 50%;
-        }
-    }
-
     .main-header{
         position: absolute;
         color: white;
         top: 70%;
         transform: translateY(-70%);
-        text-transform: uppercase;
         text-shadow: 3px 3px 10px black;
         letter-spacing: 3px;
         margin: 0;
@@ -68,7 +58,7 @@ body{
         top: 70%;
         right: 5%;
         transform: translate(-5%, -70%);
-        border-bottom: 1.5px solid white;
+        border-bottom: 1.5px solid#383838;
     }
 
 }
@@ -99,6 +89,7 @@ body{
                 text-decoration: none;
                 color: black;
                 font-size: 20px;
+                font-weight: 600;
 
                 &::after{
                     content: '';
@@ -106,7 +97,7 @@ body{
                     margin-top: 5px;
                     width: 0;
                     height: 3px;
-                    background: deepskyblue;
+                    background: #383838;
                     transition: width 300ms;
                 }
 
@@ -115,12 +106,7 @@ body{
                 }
             }
         }
-
-        li:not(.without-border){
-            border-right: 3px dashed deepskyblue;
-        }
     }
-
 }
 
 .section{
@@ -159,6 +145,7 @@ body{
                 width: 175px;
                 text-decoration: none;
                 font-size: 20px;
+                font-weight: 900;
                 color: black;
                 text-transform: lowercase;
                 line-height: 50px;
@@ -177,7 +164,7 @@ body{
                     display: block;
                     width: 0;
                     height: 0;
-                    background: deepskyblue;
+                    background: #666;
                     border-radius: 7px;
                     z-index: -1;
                     transition: width, height 300ms, 300ms;
@@ -206,9 +193,9 @@ body{
         }
 
         .txt{
-            color: white;
-            font-size: 20px;
-            font-family: sans-serif;
+            color: #080808;
+            font-size: 19px;
+            font-weight: 600;
             text-align: justify;
         }
 
@@ -327,10 +314,10 @@ body{
                 margin-left: 180px;
                 width: 150px;
                 height: 50px;
-                background: white;
                 border: none;
                 font-weight: 700;
                 transition: background-color 1s;
+                background: rgba(0, 0, 0, 0.5);
                 .border-radius(5px);
 
                 &:hover{
@@ -341,10 +328,10 @@ body{
             button[type="reset"]{
                 width: 150px;
                 height: 50px;
-                background: white;
                 border: none;
                 font-weight: 700;
                 transition: background-color 1s;
+                background: rgba(0, 0, 0, 0.5);
                 .border-radius(5px);
 
                 &:hover{
@@ -398,16 +385,17 @@ body{
 
 .bad{
     background: rgba(207, 0, 15, 0.7);
+    z-index: 999;
 }
 
 .green{
-    background: rgba(38, 166, 91, 0.7)
+    background: rgba(38, 166, 91, 0.7);
+    z-index: 999;
 }
 
 /* Responsive Web Design */
 
 @media all and (max-width: 1000px){
-
     body{
         padding: 10px;
     }
@@ -424,14 +412,6 @@ body{
 }
 
 @media all and (max-width: 900px){
-
-    .header{
-
-        .logo{
-            margin-left: 50px;
-        }
-    }
-
     .section{
 
         .article{
@@ -446,26 +426,17 @@ body{
             }
         }
     }
-
 }
 
 @media all and (max-width: 800px){
-
-    .header{
-
-        .logo{
-            margin-left: 75px;
-        }
-    }
-
     .section{
 
         .left-menu{
 
             .menu{
-    
+
                 li{
-    
+
                     a{
                         margin-left: -5px;
                     }
@@ -476,7 +447,7 @@ body{
         .article{
 
             .txt{
-                font-size: 16px;
+                font-size: 15px;
             }
 
             .container-games{
@@ -484,7 +455,6 @@ body{
                 .row-with-game{
 
                     .describe{
-
                         font-size: 15.5px;
                     }
                 }
@@ -494,7 +464,6 @@ body{
 }
 
 @media all and (max-width: 750px){
-
     .header{
 
         .social-media{
@@ -512,7 +481,6 @@ body{
             width: 100%;
             height: 75px;
             margin-bottom: 10px;
-
             .menu{
                 flex-direction: row;
                 align-items: center;
@@ -545,24 +513,8 @@ body{
     }
 }
 
-@media all and (max-width: 720px){
-
-    .header{
-
-        .logo{
-            margin-left: 100px;
-        }
-    }
-}
-
 @media all and (max-width: 645px){
-
-    .header{
-
-        .logo{
-            margin-left: 125px;
-        }
-
+    header{
         .social-media{
 
             a{
@@ -586,7 +538,6 @@ body{
 }
 
 @media all and (max-width: 600px){
-
     .section{
 
         .left-menu{
@@ -607,14 +558,6 @@ body{
 }
 
 @media all and (max-width: 570px){
-
-    .header{
-
-        .logo{    
-            margin-left: 150px;
-        }
-    }
-
     .section{
 
         .article{
@@ -633,12 +576,7 @@ body{
 }
 
 @media all and (max-width: 530px){
-
     .header{
-
-        .logo{
-            margin-left: 170px;
-        }
 
         .social-media{
 
@@ -713,17 +651,12 @@ body{
 }
 
 @media all and(max-width: 450px){
-
     .header{
         display: flex;
         justify-content: center;
 
         .main-header{
             text-shadow: 15px 15px 7.5px black;
-        }
-
-        .logo{
-            display: none;
         }
 
         .social-media{
@@ -824,7 +757,6 @@ body{
 }
 
 @media all and(max-width: 360px){
-
     .section{
 
         .article{
@@ -847,7 +779,6 @@ body{
 }
 
 @media all and(max-width: 330px){
-
     .section{
 
         .article{

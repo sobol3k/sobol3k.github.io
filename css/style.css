@@ -74,7 +74,7 @@
 .section .article .container-games .row-with-game .logo-game {
   width: 150px;
   height: 100%;
-  border: 3px solid white;
+  border: 3px solid #080808;
   border-radius: 5px;
   margin-right: 15px;
 }
@@ -83,11 +83,12 @@
   height: 100%;
 }
 .section .article .container-games .row-with-game .describe {
-  color: white;
+  color: #080808;
+  font-weight: 600;
   font-size: 17.5px;
   width: 395px;
   height: 95%;
-  border: 3px solid white;
+  border: 3px solid #080808;
   border-radius: 5px;
   padding: 5px;
 }
@@ -114,7 +115,9 @@ html {
 }
 body {
   margin: 0;
-  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  background: url('../img/background.jpg');
+  background-size: cover;
+  background-position: center;
   background-attachment: fixed;
   height: 100vh;
 }
@@ -127,21 +130,11 @@ body {
   width: 100%;
   position: relative;
 }
-.header .logo {
-  position: absolute;
-  left: 32.5%;
-  width: 200px;
-  transform: translateX(-32.5%);
-}
-.header .logo img {
-  width: 50%;
-}
 .header .main-header {
   position: absolute;
   color: white;
   top: 70%;
   transform: translateY(-70%);
-  text-transform: uppercase;
   text-shadow: 3px 3px 10px black;
   letter-spacing: 3px;
   margin: 0;
@@ -157,7 +150,7 @@ body {
   top: 70%;
   right: 5%;
   transform: translate(-5%, -70%);
-  border-bottom: 1.5px solid white;
+  border-bottom: 1.5px solid#383838;
 }
 .nav {
   width: 100%;
@@ -185,6 +178,7 @@ body {
   text-decoration: none;
   color: black;
   font-size: 20px;
+  font-weight: 600;
 }
 .nav ul li a::after {
   content: '';
@@ -192,14 +186,11 @@ body {
   margin-top: 5px;
   width: 0;
   height: 3px;
-  background: deepskyblue;
+  background: #383838;
   transition: width 300ms;
 }
 .nav ul li a:hover::after {
   width: 100%;
-}
-.nav ul li:not(.without-border) {
-  border-right: 3px dashed deepskyblue;
 }
 .section {
   display: flex;
@@ -236,6 +227,7 @@ body {
   width: 175px;
   text-decoration: none;
   font-size: 20px;
+  font-weight: 900;
   color: black;
   text-transform: lowercase;
   line-height: 50px;
@@ -254,7 +246,7 @@ body {
   display: block;
   width: 0;
   height: 0;
-  background: deepskyblue;
+  background: #666;
   border-radius: 7px;
   z-index: -1;
   transition: width, height 300ms, 300ms;
@@ -277,9 +269,9 @@ body {
   padding-bottom: 13px;
 }
 .section .article .txt {
-  color: white;
-  font-size: 20px;
-  font-family: sans-serif;
+  color: #080808;
+  font-size: 19px;
+  font-weight: 600;
   text-align: justify;
 }
 .section .article .container-video-gameplay {
@@ -380,10 +372,10 @@ body {
   margin-left: 180px;
   width: 150px;
   height: 50px;
-  background: white;
   border: none;
   font-weight: 700;
   transition: background-color 1s;
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
 }
 .section .article .form button[type="submit"]:hover {
@@ -392,10 +384,10 @@ body {
 .section .article .form button[type="reset"] {
   width: 150px;
   height: 50px;
-  background: white;
   border: none;
   font-weight: 700;
   transition: background-color 1s;
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
 }
 .section .article .form button[type="reset"]:hover {
@@ -438,9 +430,11 @@ body {
 /* klasy do walidacji pól na żywo oraz dla efektów animacji */
 .bad {
   background: rgba(207, 0, 15, 0.7);
+  z-index: 999;
 }
 .green {
   background: rgba(38, 166, 91, 0.7);
+  z-index: 999;
 }
 /* Responsive Web Design */
 @media all and (max-width: 1000px) {
@@ -452,9 +446,6 @@ body {
   }
 }
 @media all and (max-width: 900px) {
-  .header .logo {
-    margin-left: 50px;
-  }
   .section .article .txt {
     font-size: 17px;
   }
@@ -464,14 +455,11 @@ body {
   }
 }
 @media all and (max-width: 800px) {
-  .header .logo {
-    margin-left: 75px;
-  }
   .section .left-menu .menu li a {
     margin-left: -5px;
   }
   .section .article .txt {
-    font-size: 16px;
+    font-size: 15px;
   }
   .section .article .container-games .row-with-game .describe {
     font-size: 15.5px;
@@ -508,16 +496,8 @@ body {
     max-width: 500px;
   }
 }
-@media all and (max-width: 720px) {
-  .header .logo {
-    margin-left: 100px;
-  }
-}
 @media all and (max-width: 645px) {
-  .header .logo {
-    margin-left: 125px;
-  }
-  .header .social-media a {
+  header .social-media a {
     margin: 5px;
   }
   .nav .menu li a {
@@ -532,17 +512,11 @@ body {
   }
 }
 @media all and (max-width: 570px) {
-  .header .logo {
-    margin-left: 150px;
-  }
   .section .article .container-games .row-with-game .describe {
     font-size: 13px;
   }
 }
 @media all and (max-width: 530px) {
-  .header .logo {
-    margin-left: 170px;
-  }
   .header .social-media a {
     margin: 5px;
   }
@@ -583,9 +557,6 @@ body {
   }
   .header .main-header {
     text-shadow: 15px 15px 7.5px black;
-  }
-  .header .logo {
-    display: none;
   }
   .header .social-media {
     display: none;

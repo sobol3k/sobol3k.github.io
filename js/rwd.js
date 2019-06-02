@@ -2,7 +2,6 @@
 function removePadding(){
 
     if(document.location.href.indexOf('kontakt.html') > -1){
-
         const article = document.querySelector('.article');
         return article.style.padding = 0;
     }
@@ -11,7 +10,6 @@ function removePadding(){
 function addMarginToFooter(){
 
     if(document.location.href.indexOf('index.html') > -1 && window.outerWidth <= 750){
-
         const footer = document.querySelector('.footer');
         return footer.style.marginTop = 95 + 'px';
     }
@@ -21,14 +19,12 @@ function addMarginToFooter(){
     }
 }
 
-function forMobile(btn){
-
+function forMobileDevices(btn){
     const footer = document.querySelector('.footer');
 
     /* RWD dla uzytkonwika jeśli wejdzie na strone po przez urządzenie które ma mniejszą rozdzielczość niż 450px */
 
     if(window.outerWidth <= 450){
-
         btn[0].textContent = "RTS";
         btn[1].textContent = "TPP";
         btn[2].textContent = "ADV";
@@ -36,7 +32,6 @@ function forMobile(btn){
         btn[4].textContent = "ECO";
     }
     else{
-
         btn[0].textContent = "strategia";
         btn[1].textContent = "skradanki";
         btn[2].textContent = "przygodowe";
@@ -54,14 +49,12 @@ function forMobile(btn){
     /* dodanie marginesu górnego dla stopki kiedy rozdzielczość jest <= 450px oraz użytkownik jest na podstronie 'type/gatunek-gier' */
 
     if(window.innerWidth <= 450 && document.location.href.indexOf('type') > -1){
-
         footer.style.marginTop = 70 + "px";
     }
 
     /* dodanie marginesu górnego dla stopki kiedy rozdzielczość jest <= 450px oraz użytkownik jest na stronie głównej */
 
     if(window.innerWidth <= 450 && document.location.href.indexOf('index.html') > -1){
-
         footer.style.marginTop = 10 + "px";
     }
 }
@@ -71,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const typeOfGame = document.querySelectorAll('.type-of-game');
 
     const games = {
-
         rts: typeOfGame[0],
         tpp: typeOfGame[1],
         adv: typeOfGame[2],
@@ -84,16 +76,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* RWD dla uzytkonwika jeśli wejdzie na strone po przez urządzenie które ma mniejszą rozdzielczość niż 450px */
 
-    forMobile(btn);
+    forMobileDevices(btn);
 
     window.addEventListener('resize', () => {
-
         const footer = document.querySelector('.footer');
 
         /* RWD dla uzytkonwika komputerowego, który być może będzie zmniejszał/zwiększał rozmiar okna*/
 
         if(window.outerWidth <= 450){
-
             btn[0].textContent = "RTS";
             btn[1].textContent = "TPP";
             btn[2].textContent = "ADV";
@@ -101,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
             btn[4].textContent = "ECO";
         }
         else{
-
             btn[0].textContent = "strategia";
             btn[1].textContent = "skradanki";
             btn[2].textContent = "przygodowe";
@@ -112,34 +101,28 @@ document.addEventListener('DOMContentLoaded', () => {
         /* dla zakładki type */
 
         if(window.innerWidth <= 750 && document.location.href.indexOf('type') > -1){
-    
             footer.style.marginTop = 95 + "px";
         }
 
         if(window.innerWidth >= 750 && document.location.href.indexOf('type') > -1){
-    
             footer.style.marginTop = 10 + "px";
         }
 
         if(window.innerWidth <= 450 && document.location.href.indexOf('type') > -1){
-
             footer.style.marginTop = 70 + 'px';
         }
 
         /* dla zakładki index.html */
 
         if(window.innerWidth <= 750 && document.location.href.indexOf('index.html') > -1){
-
             footer.style.marginTop = 95 + 'px';
         }
 
         if(window.innerWidth >= 750 && document.location.href.indexOf('index.html') > -1){
-
             footer.style.marginTop = 10 + 'px';
         }
 
         if(window.innerWidth <= 450 && document.location.href.indexOf('index.html') > -1){
-
             footer.style.marginTop = 70 + 'px';
         }
 
@@ -147,5 +130,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     removePadding();
     addMarginToFooter();
-
 }, false)

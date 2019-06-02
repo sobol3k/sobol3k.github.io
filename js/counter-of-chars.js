@@ -1,5 +1,5 @@
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => { 
     
     const textareaField = document.querySelector('textarea[name="message"]');
     textareaField.addEventListener('keydown', (e) => {
