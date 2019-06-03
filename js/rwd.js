@@ -101,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const footer = document.querySelector('.footer');
 
         /* RWD dla uzytkonwika komputerowego, który być może będzie zmniejszał/zwiększał rozmiar okna*/
-
         if(window.outerWidth <= 450){
             btn[0].textContent = "RTS";
             btn[1].textContent = "TPP";
