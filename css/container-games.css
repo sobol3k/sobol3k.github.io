@@ -5,7 +5,7 @@
   overflow-y: scroll;
 }
 .section .article .container-games::-webkit-scrollbar {
-  width: 15px;
+  width: 10px;
 }
 .section .article .container-games::-webkit-scrollbar-track {
   border-radius: 5px;
@@ -37,7 +37,7 @@
 .section .article .container-games .row-with-game .describe {
   color: #080808;
   font-weight: 600;
-  font-size: 17.5px;
+  font-size: 17.2px;
   width: 395px;
   height: 95%;
   border: 3px solid #080808;
@@ -48,6 +48,6 @@
   align-self: center;
   color: black;
   font-size: 50px;
-  margin-left: 15px;
+  margin-left: 30px;
   cursor: pointer;
 }
