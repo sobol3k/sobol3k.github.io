@@ -30,20 +30,12 @@ function createInfoWindow(manufacturer, publisher, yearOfProduction){
                             </div>`;
 
     document.addEventListener('click', (e) => {
-
-        if(e.target.classList.contains('close-window')){
-            document.body.removeChild(windowInfo);
-        }
-
+        if(e.target.classList.contains('close-window')) document.body.removeChild(windowInfo);
     }, false)
 
 
     document.addEventListener('keyup', (e) => {
-
-        if(e.keyCode === 27){
-            document.body.removeChild(windowInfo);
-        }
-        
+        if(e.keyCode === 27) document.body.removeChild(windowInfo);
     }, false)
 
     document.body.appendChild(windowInfo);

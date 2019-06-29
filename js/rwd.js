@@ -1,47 +1,35 @@
 function removePadding(){
+
     if(document.location.href.indexOf('kontakt.html') > -1){
+
         const article = document.querySelector('.article');
         return article.style.padding = 0;
     }
 }
 
 function addMarginWhenUserIsLocatedTypeGames(footer){
-    if(window.innerWidth <= 750 && document.location.href.indexOf('type') > -1){
-        footer.style.marginTop = 95 + "px";
-    }
 
-    if(window.innerWidth >= 750 && document.location.href.indexOf('type') > -1){
-        footer.style.marginTop = 10 + "px";
-    }
-
-    if(window.innerWidth <= 450 && document.location.href.indexOf('type') > -1){
-        footer.style.marginTop = 70 + 'px';
-    }
+    if(window.innerWidth <= 750 && document.location.href.indexOf('type') > -1) footer.style.marginTop = 95 + "px";
+    if(window.innerWidth >= 750 && document.location.href.indexOf('type') > -1) footer.style.marginTop = 10 + "px";
+    if(window.innerWidth <= 450 && document.location.href.indexOf('type') > -1) footer.style.marginTop = 70 + 'px';
 }
 
 function addMarginWhenUserIsLocatedMainWebsite(footer){
-    if(window.innerWidth <= 750 && document.location.href.indexOf('index.html') > -1){
-        footer.style.marginTop = 95 + 'px';
-    }
 
-    if(window.innerWidth >= 750 && document.location.href.indexOf('index.html') > -1){
-        footer.style.marginTop = 10 + 'px';
-    }
-
-    if(window.innerWidth <= 450 && document.location.href.indexOf('index.html') > -1){
-        footer.style.marginTop = 70 + 'px';
-    }
+    if(window.innerWidth <= 750 && document.location.href.indexOf('index.html') > -1) footer.style.marginTop = 95 + 'px';
+    if(window.innerWidth >= 750 && document.location.href.indexOf('index.html') > -1) footer.style.marginTop = 10 + 'px'
+    if(window.innerWidth <= 450 && document.location.href.indexOf('index.html') > -1) footer.style.marginTop = 70 + 'px';  
 }
 
 function addMarginToFooter(){
+
     if(document.location.href.indexOf('index.html') > -1 && window.outerWidth <= 750){
+
         const footer = document.querySelector('.footer');
         return footer.style.marginTop = 95 + 'px';
     }
 
-    if(document.location.href.indexOf('index.html') > -1 && window.outerWidth <= 450){
-        return footer.style.marginTop = 70 + 'px';
-    }
+    if(document.location.href.indexOf('index.html') > -1 && window.outerWidth <= 450) return footer.style.marginTop = 70 + 'px';
 }
 
 function forMobileDevices(btn){
@@ -64,25 +52,18 @@ function forMobileDevices(btn){
     }
 
     /* dodanie marginesu górnego dla stopki kiedy rozdzielczość jest <= 750px oraz użytkownik jest na podstronie 'type/gatunek-gier' */
-    if(window.innerWidth <= 750 && document.location.href.indexOf('type') > -1){
-
-        footer.style.marginTop = 95 + "px";
-    }
+    if(window.innerWidth <= 750 && document.location.href.indexOf('type') > -1) footer.style.marginTop = 95 + "px";
 
     /* dodanie marginesu górnego dla stopki kiedy rozdzielczość jest <= 450px oraz użytkownik jest na podstronie 'type/gatunek-gier' */
-    if(window.innerWidth <= 450 && document.location.href.indexOf('type') > -1){
-        footer.style.marginTop = 70 + "px";
-    }
+    if(window.innerWidth <= 450 && document.location.href.indexOf('type') > -1) footer.style.marginTop = 70 + "px";
 
     /* dodanie marginesu górnego dla stopki kiedy rozdzielczość jest <= 450px oraz użytkownik jest na stronie głównej */
-    if(window.innerWidth <= 450 && document.location.href.indexOf('index.html') > -1){
-        footer.style.marginTop = 10 + "px";
-    }
+    if(window.innerWidth <= 450 && document.location.href.indexOf('index.html') > -1) footer.style.marginTop = 10 + "px";
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const typeOfGame = document.querySelectorAll('.type-of-game');
 
+    const typeOfGame = document.querySelectorAll('.type-of-game');
     const games = {
         rts: typeOfGame[0],
         tpp: typeOfGame[1],
@@ -98,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     forMobileDevices(btn);
 
     window.addEventListener('resize', () => {
+
         const footer = document.querySelector('.footer');
 
         /* RWD dla uzytkonwika komputerowego, który być może będzie zmniejszał/zwiększał rozmiar okna*/
@@ -121,8 +103,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         /* dla index.html */
         addMarginWhenUserIsLocatedMainWebsite(footer);
+        
     }, false)
 
     removePadding();
     addMarginToFooter();
+
 }, false)

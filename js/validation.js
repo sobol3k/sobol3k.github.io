@@ -5,12 +5,8 @@ function checkName(name){
     const nameValue = name.value;
     const nameReg = new RegExp("^[a-zA-Z]{3,}$");
 
-    if(nameReg.test(nameValue)){
-        return true;
-    }
-    else{
-        return false;
-    }
+    if(nameReg.test(nameValue)) return true;
+    else return false;
 }
 
 function checkMail(email){
@@ -18,45 +14,35 @@ function checkMail(email){
     const mailValue = email.value;
     const mailReg = new RegExp("^[0-9a-zA-Z_.-]+@[0-9a-zA-Z.-{2,}]+\.[a-zA-Z]{2,3}$");
 
-    if(mailReg.test(mailValue)){
-        return true;
-    }
-    else{
-        return false;
-    }
+    if(mailReg.test(mailValue)) return true;
+    else return false;
 }
 
 function checkSubject(subject){
 
     const subjectValue = subject.value;
 
-    if(subjectValue.length < 5){
-        return true;
-    }
-    else{
-        return false;
-    }
+    if(subjectValue.length < 5) return true;
+    else return false;
 }
 
 function checkMessage(message){
 
     const messageValue = message.value;
 
-    if(messageValue.length < 10){
-        return true;
-    }
-    else{
-        return false;
-    }
+    if(messageValue.length < 10) return true;
+    else return false;
 }
 
 document.addEventListener('DOMContentLoaded', function(){
+
     const messageError = document.querySelector('.message-error');
     const btnReset = document.querySelector('#btn-reset');
     
     /* przywrócenie pól do ustawienień defaultowych */
 
     btnReset.addEventListener('click', function(){
+
         const inputFields = document.querySelectorAll('.el-form');
 
         for(const field of inputFields){
@@ -69,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }, false)
 
     const form = {
+
         name: document.querySelector('input[name="forename"]'),
         email: document.querySelector('input[name="email"]'),
         subject: document.querySelector('input[name="subject"]'),
@@ -83,46 +70,30 @@ document.addEventListener('DOMContentLoaded', function(){
 
     name.addEventListener('input', function(){
 
-        if(!checkName(name)){
-            name.classList.add('bad');
-        }
-        else{
-            name.classList.add('green');
-        }
+        if(!checkName(name)) name.classList.add('bad');
+        else name.classList.add('green');
 
     }, false)
 
     email.addEventListener('input', function(){
 
-        if(!checkMail(email)){
-            email.classList.add('bad');
-        }
-        else{
-            email.classList.add('green');
-        }
+        if(!checkMail(email)) email.classList.add('bad');
+        else email.classList.add('green');
 
     }, false)
 
     subject.addEventListener('input', function(){
 
-        if(checkSubject(subject)){
-            subject.classList.add('bad');
-        }
-        else{
-            subject.classList.add('green');
-        }
+        if(checkSubject(subject)) subject.classList.add('bad');
+        else subject.classList.add('green');
 
     }, false)
 
     message.addEventListener('input', function(){
 
-        if(checkMessage(message)){
-            message.classList.add('bad');
-        }
-        else{
-            message.classList.add('green');
-        }
-
+        if(checkMessage(message)) message.classList.add('bad');
+        else message.classList.add('green');
+            
     }, false)
 
     /* ewentualnie wyświetlenie informacji o błędzie wysyłki formularza w okienku popup */
@@ -152,6 +123,7 @@ document.addEventListener('DOMContentLoaded', function(){
     document.addEventListener('click', function(event){
 
         if(event.target.classList.contains('accepted-error')){
+
             messageError.style.display = "none";
             document.body.classList.remove('opened-message-error');
         }
