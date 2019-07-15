@@ -17,6 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
             else{
                 createInfoWindow('EA DICE / Digital Illusions CE', 'Electronic Arts Inc.', 2018);
             }
-        }, false)
+        })
     }
-}, false)
+})

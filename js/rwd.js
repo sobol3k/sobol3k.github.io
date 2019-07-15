@@ -104,9 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
         /* dla index.html */
         addMarginWhenUserIsLocatedMainWebsite(footer);
         
-    }, false)
-
+    })
     removePadding();
     addMarginToFooter();
-
-}, false)
+})

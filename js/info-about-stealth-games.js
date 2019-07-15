@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
         info.addEventListener('click', () => {
             
             if(info.parentElement.firstElementChild.firstElementChild.alt.indexOf('Assassins Creed Odyssey') > -1){
-
                 createInfoWindow('Ubisoft', 'Ubisoft', 2018);
             }
             else if(info.parentElement.firstElementChild.firstElementChild.alt.indexOf('Dishonored') > -1){
@@ -18,6 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
             else{
                 createInfoWindow('FromSoftware', 'Activision Blizzard', 2019);
             }
-        }, false)
+        })
     }
-}, false)
+})

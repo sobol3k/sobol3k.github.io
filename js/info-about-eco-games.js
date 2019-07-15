@@ -17,6 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
             else{
                 createInfoWindow('Empyrean', 'PlayWay', 2018);
             }
-        }, false)
+        })
     }
-}, false)
+})

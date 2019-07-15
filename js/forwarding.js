@@ -31,6 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }, 1000);
             }
-        }, false)
+        })
     }
-}, false)
+})

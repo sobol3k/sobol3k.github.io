@@ -17,6 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
             else{
                 createInfoWindow('Blue Byte GmbH', 'Ubisoft', 2019);
             }
-        }, false)
+        })
     }
-}, false)
+})
