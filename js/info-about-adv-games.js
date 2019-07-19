@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const infoIcons = document.querySelectorAll('.fa-info');
 
@@ -8,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if(info.parentElement.firstElementChild.firstElementChild.alt.indexOf('Subnautica') > -1){
                 createInfoWindow('Unknown Worlds Entertainment', ' Unknown Worlds Entertainment', 2018);
             } 
-                
             else if(info.parentElement.firstElementChild.firstElementChild.alt.indexOf('Syberia III') > -1){
                 createInfoWindow('Microids/Anuman Interactive', 'Microids/Anuman Interactive', 2017);
             }

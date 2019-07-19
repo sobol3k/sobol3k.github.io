@@ -1,5 +1,4 @@
 /* funkcje sprawdzające pola podczas zdarzenia typu submit */
-
 function checkName(name){
 
     const nameValue = name.value;
@@ -40,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function(){
     const btnReset = document.querySelector('#btn-reset');
     
     /* przywrócenie pól do ustawienień defaultowych */
-
     btnReset.addEventListener('click', function(){
 
         const inputFields = document.querySelectorAll('.el-form');
@@ -52,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function(){
         const counterContainer = document.querySelector('.counter').style.display = 'none';
         counterOfChars = 0;
 
-    }, false)
+    })
 
     const form = {
 
@@ -63,41 +61,38 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     /* destrukturyzacja */
-
     const {name, email, subject, message} = form;
 
     /* walidacja pól formularza na żywo */
-
     name.addEventListener('input', function(){
 
         if(!checkName(name)) name.classList.add('bad');
         else name.classList.add('green');
 
-    }, false)
+    })
 
     email.addEventListener('input', function(){
 
         if(!checkMail(email)) email.classList.add('bad');
         else email.classList.add('green');
 
-    }, false)
+    })
 
     subject.addEventListener('input', function(){
 
         if(checkSubject(subject)) subject.classList.add('bad');
         else subject.classList.add('green');
 
-    }, false)
+    })
 
     message.addEventListener('input', function(){
 
         if(checkMessage(message)) message.classList.add('bad');
         else message.classList.add('green');
             
-    }, false)
+    })
 
     /* ewentualnie wyświetlenie informacji o błędzie wysyłki formularza w okienku popup */
-
     const contactForm = document.querySelector('form').addEventListener('submit', function(e){
 
         if(!checkName(name) || !checkMail(email) || checkSubject(subject) || checkMessage(message)){
@@ -116,18 +111,13 @@ document.addEventListener('DOMContentLoaded', function(){
             alert('Poprawnie wysłano wiadomość!');
         }
         
-    }, false)
+    })
 
     /* wyłączanie okienka popup z powiadomieniem o błędzie wysyłki formularza */
-
     document.addEventListener('click', function(event){
-
         if(event.target.classList.contains('accepted-error')){
-
             messageError.style.display = "none";
             document.body.classList.remove('opened-message-error');
         }
-
-    }, false)
-
-}, false)
+    })
+})

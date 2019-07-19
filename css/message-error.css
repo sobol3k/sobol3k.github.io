@@ -8,7 +8,7 @@
   transform: translate(-50%, -15%);
   width: 400px;
   height: 200px;
-  padding: 5px;
+  padding: 15px;
   background: linear-gradient(45deg, black, gray, white);
   border: 3px solid black;
   border-radius: 5px;
@@ -33,11 +33,11 @@
   color: white;
   text-align: justify;
 }
-.message-error .row-error {
+.message-error .row-accepted-error {
   margin-top: 7px;
   text-align: center;
 }
-.message-error .row-error .accepted-error {
+.message-error .row-accepted-error .accepted-error {
   width: 100px;
   height: 30px;
   background: white;
