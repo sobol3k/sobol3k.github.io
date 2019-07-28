@@ -1,13 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const forwardingBtn = document.querySelectorAll('.nav > .menu > li > a');
-
     for(let i=0; i<forwardingBtn.length; i++){
         forwardingBtn[i].addEventListener('click', (e) => {
             if(forwardingBtn[i].innerText === "Gry Online"){
-                
-                e.preventDefault();
-                document.body.classList.add('opened-message-error');
-
                 let counter = 3;
                 const newElement = document.createElement('span');
                 newElement.style.color = 'white';
@@ -20,12 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 newElement.style.left = '50' + '%';
                 newElement.style.transform = 'translate(-50%,-50%)';
                 newElement.style.zIndex = 999;
-
+                
+                e.preventDefault();
+                document.body.classList.add('opened-message-error');
                 document.body.appendChild(newElement);
 
                 setInterval(function(){
                     newElement.innerText = counter--;
-
                     if(counter === 0){
                         document.location = 'https://www.gry-online.pl';
                     }

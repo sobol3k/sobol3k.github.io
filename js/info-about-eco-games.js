@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const infoIcons = document.querySelectorAll('.fa-info');
-
     for(const info of infoIcons){
         info.addEventListener('click', () => {
-
             if(info.parentElement.firstElementChild.firstElementChild.alt.indexOf('The Sims 4') > -1){
                 createInfoWindow('EA Maxis / Maxis Software', 'Electronic Arts Inc.', 2014);
             }

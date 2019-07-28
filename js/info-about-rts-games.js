@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const infoIcons = document.querySelectorAll('.fa-info');
-
     for(const info of infoIcons){
         info.addEventListener('click', () => {
-
             if(info.parentElement.firstElementChild.firstElementChild.alt.indexOf('Anno 1800') > -1){
                 createInfoWindow('Blue Byte GmbH', 'Ubisoft', 2019);
             }

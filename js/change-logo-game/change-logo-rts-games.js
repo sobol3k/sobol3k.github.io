@@ -8,7 +8,6 @@ function changeWhenUserHasWindowUnder(tabImg, tabTitles){
 
 document.addEventListener('DOMContentLoaded', () => {
     const elementsWithImg = document.querySelectorAll('.logo-game');
-
     const title = [
         'ANNO 1800',
         'Civilization VI',

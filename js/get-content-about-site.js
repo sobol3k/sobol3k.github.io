@@ -1,18 +1,14 @@
 document.addEventListener('DOMContentLoaded', function(){
-
     const xhr = new XMLHttpRequest();
-    console.log(xhr);
-
     xhr.open('GET', '../text/about-site.txt', true);
-
     xhr.onload = function(){
         if(this.status = 200 && this.readyState === 4){
             const resposneTxt = this.responseText;
-            const div = document.querySelector('.txt');
-            div.textContent = resposneTxt;
+            const paragraph = document.querySelector('.about-site');
+            paragraph.textContent = resposneTxt;
         }
         else{
-            console.log(this.status);
+            console.error('Upsss... coś poszło nie tak, status: ' + this.status);
         }
     }
     xhr.send();

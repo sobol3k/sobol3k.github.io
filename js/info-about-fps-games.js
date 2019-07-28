@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const infoIcons = document.querySelectorAll('.fa-info');
-
     for(const info of infoIcons){
         info.addEventListener('click', () => {
-
             if(info.parentElement.firstElementChild.firstElementChild.alt.indexOf('Metro: Exodus') > -1){
                 createInfoWindow('4A Games', 'Deep Silver / Koch Media', 2019);
             }

@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const infoIcons = document.querySelectorAll('.fa-info');
-
     for(const info of infoIcons){
         info.addEventListener('click', () => {
-            
             if(info.parentElement.firstElementChild.firstElementChild.alt.indexOf('Assassins Creed Odyssey') > -1){
                 createInfoWindow('Ubisoft', 'Ubisoft', 2018);
             }

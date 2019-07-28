@@ -1,5 +1,4 @@
 function createInfoWindow(manufacturer, publisher, yearOfProduction){
-
     const windowInfo = document.createElement('div');
     windowInfo.classList.add('window-info');
     windowInfo.style.position = 'fixed';
@@ -13,10 +12,12 @@ function createInfoWindow(manufacturer, publisher, yearOfProduction){
     windowInfo.style.borderRadius = 8 + 'px';
     windowInfo.style.fontSize = (window.outerWidth <= 430) ? 12 + 'px' : 15 + 'px';
     windowInfo.style.zIndex = '1';
-    windowInfo.style.backgroundColor = 'white';
+    windowInfo.style.backgroundColor = '#d6d2ce';
     windowInfo.innerHTML = `<h1 style="text-align: center;">informacje</h1>
                             <span style="position: absolute; top: 5%; left: 2%;">ESC (wyjście)</span>
-                            <span class="close-window"></span>
+                            <span class="close-window">
+                                <span class="fas fa-times"></span>
+                            </span>
                             <div class="info-box">
                                 <div style="margin-bottom: 25px;">
                                     <strong>Producent: ${manufacturer} </strong>
@@ -30,13 +31,11 @@ function createInfoWindow(manufacturer, publisher, yearOfProduction){
                             </div>`;
 
     document.addEventListener('click', (e) => {
-        if(e.target.classList.contains('close-window')) document.body.removeChild(windowInfo);
+        if(e.target.classList.contains('fa-times')) document.body.removeChild(windowInfo);
     })
-
 
     document.addEventListener('keyup', (e) => {
         if(e.keyCode === 27) document.body.removeChild(windowInfo);
     })
-
     document.body.appendChild(windowInfo);
 }

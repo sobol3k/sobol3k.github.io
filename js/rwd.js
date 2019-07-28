@@ -1,30 +1,24 @@
 function removePadding(){
-
     if(document.location.href.indexOf('kontakt.html') > -1){
-
         const article = document.querySelector('.article');
         return article.style.padding = 0;
     }
 }
 
 function addMarginWhenUserIsLocatedTypeGames(footer){
-
     if(window.innerWidth <= 750 && document.location.href.indexOf('type') > -1) footer.style.marginTop = 95 + "px";
     if(window.innerWidth >= 750 && document.location.href.indexOf('type') > -1) footer.style.marginTop = 10 + "px";
     if(window.innerWidth <= 450 && document.location.href.indexOf('type') > -1) footer.style.marginTop = 70 + 'px';
 }
 
 function addMarginWhenUserIsLocatedMainWebsite(footer){
-
     if(window.innerWidth <= 750 && document.location.href.indexOf('index.html') > -1) footer.style.marginTop = 95 + 'px';
     if(window.innerWidth >= 750 && document.location.href.indexOf('index.html') > -1) footer.style.marginTop = 10 + 'px'
     if(window.innerWidth <= 450 && document.location.href.indexOf('index.html') > -1) footer.style.marginTop = 70 + 'px';  
 }
 
 function addMarginToFooter(){
-
     if(document.location.href.indexOf('index.html') > -1 && window.outerWidth <= 750){
-
         const footer = document.querySelector('.footer');
         return footer.style.marginTop = 95 + 'px';
     }
@@ -35,7 +29,7 @@ function addMarginToFooter(){
 function forMobileDevices(btn){
     const footer = document.querySelector('.footer');
 
-    /* RWD dla uzytkonwika jeśli wejdzie na strone po przez urządzenie które ma mniejszą rozdzielczość niż 450px */
+    /* RWD for user, if enter on the website via mobile device which has resolution of screen <= 450px */
     if(window.outerWidth <= 450){
         btn[0].textContent = "RTS";
         btn[1].textContent = "TPP";
@@ -51,18 +45,17 @@ function forMobileDevices(btn){
         btn[4].textContent = "ekonomiczne";
     }
 
-    /* dodanie marginesu górnego dla stopki kiedy rozdzielczość jest <= 750px oraz użytkownik jest na podstronie 'type/gatunek-gier' */
+    /* adding margin top for footer when resolution is <= 750px and user is located on subpage 'type/gatunek-gier' */
     if(window.innerWidth <= 750 && document.location.href.indexOf('type') > -1) footer.style.marginTop = 95 + "px";
 
-    /* dodanie marginesu górnego dla stopki kiedy rozdzielczość jest <= 450px oraz użytkownik jest na podstronie 'type/gatunek-gier' */
+    /* adding margin top for footer when resolution is <= 450px and user is located on subpage 'type/gatunek-gier' */
     if(window.innerWidth <= 450 && document.location.href.indexOf('type') > -1) footer.style.marginTop = 70 + "px";
 
-    /* dodanie marginesu górnego dla stopki kiedy rozdzielczość jest <= 450px oraz użytkownik jest na stronie głównej */
+    /* adding margin top for footer when resolution is <= 450px and user is located on main page */
     if(window.innerWidth <= 450 && document.location.href.indexOf('index.html') > -1) footer.style.marginTop = 10 + "px";
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-
     const typeOfGame = document.querySelectorAll('.type-of-game');
     const games = {
         rts: typeOfGame[0],
@@ -75,14 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const {rts, tpp, adv, fps, eco} = games;
     const btn = [rts, tpp, adv, fps, eco];
 
-    /* RWD dla uzytkonwika jeśli wejdzie na strone po przez urządzenie które ma mniejszą rozdzielczość niż 450px */
+    /* RWD for user, if enter on the website via mobile device which has resolution of screen <= 450px */
     forMobileDevices(btn);
 
     window.addEventListener('resize', () => {
-
         const footer = document.querySelector('.footer');
-
-        /* RWD dla uzytkonwika komputerowego, który być może będzie zmniejszał/zwiększał rozmiar okna*/
+        /* RWD for PC user, who will reduce or increase the size of the window */
         if(window.outerWidth <= 450){
             btn[0].textContent = "RTS";
             btn[1].textContent = "TPP";
@@ -97,13 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
             btn[3].textContent = "strzelanki";
             btn[4].textContent = "ekonomiczne";
         }
-
-        /* dla zakładki type */
+        /* for zakładki type */
         addMarginWhenUserIsLocatedTypeGames(footer);
-
-        /* dla index.html */
+        /* for index.html */
         addMarginWhenUserIsLocatedMainWebsite(footer);
-        
     })
     removePadding();
     addMarginToFooter();
